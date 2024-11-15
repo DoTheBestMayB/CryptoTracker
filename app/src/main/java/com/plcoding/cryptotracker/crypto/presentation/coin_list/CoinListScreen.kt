@@ -34,6 +34,7 @@ import kotlinx.coroutines.withContext
 @Composable
 fun CoinListScreen(
     state: CoinListState,
+    onAction: (CoinListAction) -> Unit,
     modifier: Modifier = Modifier,
 ) {
     // 아래 코드는 자주 사용되기 때문에, phillip은 확장 함수로 빼는 것을 선호
@@ -75,7 +76,7 @@ fun CoinListScreen(
             items(state.coins, key = { it.id }) { coinUi ->
                 CoinListItem(
                     coinUi = coinUi,
-                    onClick = { },
+                    onClick = { onAction(CoinListAction.OnCoinClick(coinUi)) },
                     modifier = Modifier.fillMaxWidth()
                 )
                 HorizontalDivider()
@@ -95,8 +96,9 @@ private fun CoinListScreenPreview() {
                     previewCoin.copy(id = it.toString())
                 }
             ),
+            onAction = {},
             modifier = Modifier
-                .background(MaterialTheme.colorScheme.background)
+                .background(MaterialTheme.colorScheme.background),
         )
     }
 }

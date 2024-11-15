@@ -5,4 +5,7 @@
     <string name="error_no_internet">인터넷 상태를 확인해주세요.</string>
     <string name="error_unknown">뭔가 잘못됐습니다. 잠시 후 다시 시도해주세요.</string>
     <string name="error_serialization">직렬화 또는 역직렬화 할 수 없습니다.</string>
+    <string name="market_cap">Market Cap</string>
+    <string name="price">Price</string>
+    <string name="change_last_24h">Change last 24h</string>
 </resources>
